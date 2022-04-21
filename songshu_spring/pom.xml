@@ -23,5 +23,34 @@
             <version>5.3.18</version>
         </dependency>
 
+        <!--Spring表达式语言-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>5.3.18</version>
+        </dependency>
+
+        <!--为Spring核心提供了大量扩展。可以找到使用Spring ApplicationContext特性时所需的全部类、JDNI 所需的全部类、instrumentation组件
+        以及校验Validation方面的相关类。外部依赖spring-beans, spring-aop-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.18</version>
+        </dependency>
+
+        <!--该jar包用来记录程序运行时的活动的日志记录。-->
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <!--log4j依赖-->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
     </dependencies>
 </project>

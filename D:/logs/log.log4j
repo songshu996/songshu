@@ -1,0 +1,6 @@
+[INFO ] 2022-04-21 23:33:04,474(0) --> [main] com.songshu.log4j.Log4jDemo.main(Log4jDemo.java:10): info -----------> info  
+[DEBUG] 2022-04-21 23:33:04,480(6) --> [main] com.songshu.log4j.Log4jDemo.main(Log4jDemo.java:11): debug -----------> debug  
+[INFO ] 2022-04-21 23:43:05,724(0) --> [main] com.songshu.log4j.Log4jDemo.main(Log4jDemo.java:10): info -----------> info  
+[DEBUG] 2022-04-21 23:43:05,727(3) --> [main] com.songshu.log4j.Log4jDemo.main(Log4jDemo.java:11): debug -----------> debug  
+[WARN ] 2022-04-21 23:43:05,727(3) --> [main] com.songshu.log4j.Log4jDemo.main(Log4jDemo.java:12): warn -----------> warn  
+[ERROR] 2022-04-21 23:43:05,727(3) --> [main] com.songshu.log4j.Log4jDemo.main(Log4jDemo.java:13): error -----------> error  

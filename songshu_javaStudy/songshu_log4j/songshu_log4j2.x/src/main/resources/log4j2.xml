@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration xmlns="http://logging.apache.org/log4j/2.0/config"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://logging.apache.org/log4j/2.0/config Log4j-config.xsd"
+
+               name="Log4j2Config"
+               status="debug"
+               monitorInterval="1800"
+               strict="true"
+               packages="org.apache.logging.log4j.test">
+
+
+    <!--变量配置-->
+    <Properties>
+        <Property name="console_logPattern">[%5p] [%t] %d{yyyy-MM-dd HH:mm:ss} %l %m%n</Property>
+    </Properties>
+
+    <!--两个子节点-->
+    <Appenders>
+        <!--  name：指定Appender的名字；target：SYSTEM_OUT 或 SYSTEM_ERR,一般只设置默认:SYSTEM_OUT-->
+        <Console name="debugConsole" target="SYSTEM_OUT">
+            <!--PatternLayout:输出格式，不设置默认为:%m%n.-->
+            <PatternLayout pattern="${console_logPattern}"/>
+        </Console>
+
+
+    </Appenders>
+    <Loggers></Loggers>
+
+</Configuration>

@@ -1,0 +1,49 @@
+log4j.rootLogger=DEBUG,console,consoleHtml,logFile,rollingFile,dailyFile
+log4j.additivity.org.apache=true
+
+## 输出日志到控制台(指定日志格式布局)
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.Threshold=DEBUG
+log4j.appender.console.ImmediateFlush=true
+log4j.appender.console.Target=System.out
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern=[%-5p] %d(%r) --> [%t] %l: %m %x %n
+
+##输出日志到控制台（以HTML表格的形式打印日志）
+##log4j.appender.consoleHtml=org.apache.log4j.ConsoleAppender
+##log4j.appender.consoleHtml.Threshold=DEBUG
+##log4j.appender.consoleHtml.ImmediateFlush=true
+##log4j.appender.consoleHtml.Target=System.out
+##log4j.appender.consoleHtml.layout=org.apache.log4j.HTMLLayout
+##log4j.appender.consoleHtml.layout.LocationInfo=true
+##log4j.appender.consoleHtml.layout.Title=MyLogging
+
+## 输出日志到指定文件
+log4j.appender.logFile=org.apache.log4j.FileAppender
+log4j.appender.logFile.Threshold=DEBUG
+log4j.appender.logFile.ImmediateFlush=true
+log4j.appender.logFile.Append=true
+log4j.appender.logFile.File=/Users/sunpeishuo/Java/log/test.log
+log4j.appender.logFile.layout=org.apache.log4j.PatternLayout
+log4j.appender.logFile.layout.ConversionPattern=[%-5p] %d(%r) --> [%t] %l: %m %x %n
+
+## 回滚文件(rollingFile)
+log4j.appender.rollingFile=org.apache.log4j.RollingFileAppender
+log4j.appender.rollingFile.Threshold=DEBUG
+log4j.appender.rollingFile.ImmediateFlush=true
+log4j.appender.rollingFile.Append=true
+log4j.appender.rollingFile.File=Users/sunpeishuo/Java/log/testRolling.log
+log4j.appender.rollingFile.MaxFileSize=200KB
+log4j.appender.rollingFile.MaxBackupIndex=50
+log4j.appender.rollingFile.layout=org.apache.log4j.PatternLayout
+log4j.appender.rollingFile.layout.ConversionPattern=[%-5p] %d(%r) --> [%t] %l: %m %x %n
+
+## 定期回滚日志文件(dailyFile)
+log4j.appender.dailyFile=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.dailyFile.Threshold=DEBUG
+log4j.appender.dailyFile.ImmediateFlush=true
+log4j.appender.dailyFile.Append=true
+log4j.appender.dailyFile.File=D:/logs/log.log4j
+log4j.appender.dailyFile.DatePattern='.'yyyy-MM-dd
+log4j.appender.dailyFile.layout=org.apache.log4j.PatternLayout
+log4j.appender.dailyFile.layout.ConversionPattern=[%-5p] %d(%r) --> [%t] %l: %m %x %n

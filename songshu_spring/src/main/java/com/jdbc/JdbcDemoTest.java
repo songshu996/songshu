@@ -25,6 +25,7 @@ public class JdbcDemoTest {
 
     public static void main(String[] args) throws Exception {
         PersonService personService = context.getBean("personService", PersonService.class);
-        personService.addPersion();
+        //personService.addPersion();
+        personService.updatePerson();
     }
 }

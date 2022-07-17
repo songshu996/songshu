@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 基于xml方式进行spring 声明式事务管理-->
+
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
@@ -27,13 +29,23 @@
     <!--配置事务管理器-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!--注入数据源-->
-        <property name="dataSource" ref="database"></property>
+        <property name="dataSource" ref="database"/>
     </bean>
 
-    <!--开启事务注解-->
-    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
-
     <!--配置通知-->
+    <tx:advice id="transactionInterceptor">
+        <!--配置事务参数-->
+        <tx:attributes>
+            <!--指定在哪种规则的方法上添加事务-->
+            <tx:method name="transcationMoneyA" propagation="REQUIRED" isolation="REPEATABLE_READ" rollback-for="{ArithmeticException.class}"/>
+        </tx:attributes>
+    </tx:advice>
 
-
+    <!--配置切入点和切面-->
+    <aop:config>
+        <!--配置切入点-->
+        <aop:pointcut id="pt" expression="execution(* com.jdbctemplate.service.UserAccountService.*(..))"/>
+        <!--配置切面-->
+        <aop:advisor advice-ref="transactionInterceptor" pointcut-ref="pt"/>
+    </aop:config>
 </beans>

@@ -3,7 +3,8 @@ package com.jdbc.pojo;
 public class Person {
 
     private String id;
-    private String rName;
+    private String name;
+    private String eName;
     private String age;
     private String sex;
     private String idNo;
@@ -24,12 +25,12 @@ public class Person {
         this.id = id;
     }
 
-    public String getrName() {
-        return rName;
+    public String geteName() {
+        return eName;
     }
 
-    public void setrName(String rName) {
-        this.rName = rName;
+    public void seteName(String eName) {
+        this.eName = eName;
     }
 
     public String getAge() {
@@ -96,11 +97,20 @@ public class Person {
         this.birthday = birthday;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "id='" + id + '\'' +
-                ", rName='" + rName + '\'' +
+                ", name='" + name + '\'' +
+                ", eName='" + eName + '\'' +
                 ", age='" + age + '\'' +
                 ", sex='" + sex + '\'' +
                 ", idNo='" + idNo + '\'' +

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="ApplicationContextJdbc" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/applicationContextJdbc.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/applicationContextAop.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/applicationContextDi.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/applicationContextIOC.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/applicationContextTransaction.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+</module>

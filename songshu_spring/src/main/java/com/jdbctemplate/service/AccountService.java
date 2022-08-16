@@ -28,8 +28,6 @@ public class AccountService {
         int a = 100 / 0;
         accountDao.addMoney("2002", 100.00f);
         logger.info("转账成功");
-
-
     }
 
     public void transcationMoneyB() {

@@ -3,7 +3,7 @@ package com.jdbc.service;
 
 import com.jdbc.dao.PersonDao;
 import com.jdbc.pojo.Person;
-import org.apache.log4j.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 public class PersonService {
 
-    private static Logger logger = Logger.getLogger(PersonService.class);
+    //private static Logger logger = Logger.getLogger(PersonService.class);
 
     @Autowired
     private PersonDao personDao;
@@ -25,12 +25,12 @@ public class PersonService {
         person.setId("AXtaJ3qPy8Qm8bx7JyV5");
         person.setSex("0");
         int i = personDao.updatePerson(person);
-        logger.info("update info success，result row ：" + i);
+        //logger.info("update info success，result row ：" + i);
     }
 
     public void deletePerson(){
         int i = personDao.deletePerson("AXtaJ3qPy8Qm8bx7JyV5");
-        logger.info("删除成功，删除记录数" + i);
+        //logger.info("删除成功，删除记录数" + i);
     }
 
     public void queryPersons(){
@@ -42,12 +42,12 @@ public class PersonService {
 
     public void queryPersonNameForId(){
         String name = personDao.getUserNameForId("AXtapGbijcEAuoI0lDsp");
-        logger.info("成功查询到客户姓名： " + name);
+       // logger.info("成功查询到客户姓名： " + name);
     }
 
     public void queryPersonForId(){
         Person person = personDao.getPersonById("AXtamq1fgpreNtWiOa87");
-        logger.info("成功查询到客户： " + person);
+        //logger.info("成功查询到客户： " + person);
     }
 
     public void batchAddPersons(){

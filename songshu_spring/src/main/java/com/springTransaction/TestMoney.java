@@ -30,5 +30,10 @@ public class TestMoney {
         userService.transcationMoneyA();
     }
 
+    public static void main(String[] args) {
+        UserService userService = context2.getBean("userService", UserService.class);
+        userService.transcationMoneyA();
+    }
+
 
 }

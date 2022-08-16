@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--每60s自动检测修改配置文件和重新配置本身-->
+<Configuration status="DEBUG" monitorInterval="600">
+
+    <Properties>
+        <!-- 配置日志文件输出目录，此配置将日志输出到tomcat根目录下的指定文件夹 -->
+        <Property name="LOG_HOME">D:/songshu_data/log</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="console_out_appender" target="SYSTEM_OUT">
+            <ThresholdFilter level="DEBUG" onMatch="DENY" onMismatch="ACCEPT"/>
+            <PatternLayout pattern="%5p [%t] %d{yyyy-MM-dd HH:mm:ss} (%F:%L) %m%n"/>
+        </Console>
+
+        <Console name="console_err_appender" target="SYSTEM_ERR">
+            <ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%5p [%t] %d{yyyy-MM-dd HH:mm:ss} (%F:%L) %m%n"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <!-- 配置日志的根节点 -->
+        <root level="DEBUG">
+            <appender-ref ref="console_out_appender"/>
+            <appender-ref ref="console_err_appender"/>
+        </root>
+    </Loggers>
+</Configuration>

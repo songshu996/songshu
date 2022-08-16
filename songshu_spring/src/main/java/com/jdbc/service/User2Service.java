@@ -4,7 +4,6 @@ import com.jdbc.dao.User1Dao;
 import com.jdbc.dao.User2Dao;
 import com.jdbc.pojo.User1;
 import com.jdbc.pojo.User2;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -13,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class User2Service {
 
-    private static Logger logger = Logger.getLogger(User2Service.class);
+    //private static Logger logger = Logger.getLogger(User2Service.class);
 
     @Autowired
     private User2Dao user2Dao;

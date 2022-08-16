@@ -1,7 +1,6 @@
 package com.springTransaction.service;
 
 import com.springTransaction.dao.AccountDao;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -12,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class AccountService {
 
-    private static Logger logger = Logger.getLogger(AccountService.class);
+    //private static Logger logger = Logger.getLogger(AccountService.class);
 
     @Autowired
     private AccountDao accountDao;
@@ -27,7 +26,7 @@ public class AccountService {
         //mary 多100
         int a = 100 / 0;
         accountDao.addMoney("2002", 100.00f);
-        logger.info("转账成功");
+        //logger.info("转账成功");
     }
 
     public void transcationMoneyB() {
@@ -36,7 +35,7 @@ public class AccountService {
         //mary 多100
         int a = 100 / 0;
         accountDao.addMoney("2002", 50.00f);
-        logger.info("转账成功");
+        //logger.info("转账成功");
     }
 
 }

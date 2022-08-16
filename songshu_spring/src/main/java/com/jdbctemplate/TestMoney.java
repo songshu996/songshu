@@ -1,12 +1,9 @@
 package com.jdbctemplate;
 
-import com.jdbctemplate.service.AccountService;
-import com.jdbctemplate.service.UserAccountService;
+import com.jdbctemplate.service.UserService;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 @Component
 public class TestMoney {
@@ -31,8 +28,8 @@ public class TestMoney {
 
     @Test
     public void test_PROPAGATION_REQUIRED2(){
-        UserAccountService userAccountService = context2.getBean("userAccountService", UserAccountService.class);
-        userAccountService.transcationMoneyA();
+        UserService userService = context2.getBean("userService", UserService.class);
+        userService.transcationMoneyA();
 
 
     }

@@ -1,6 +1,6 @@
 package com.jdbctemplate.dao;
 
-public interface UserAccuntDao {
+public interface UserDao {
 
     /**
      * 转入资金

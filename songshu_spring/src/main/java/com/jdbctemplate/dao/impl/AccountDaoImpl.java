@@ -1,13 +1,14 @@
 package com.jdbctemplate.dao.impl;
 
-import com.jdbctemplate.dao.AccuntDao;
+import com.jdbctemplate.dao.AccountDao;
+import com.jdbctemplate.dao.UserDao;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class AccountDaoImpl implements AccuntDao {
+public class AccountDaoImpl implements AccountDao {
 
     private static Logger logger = Logger.getLogger(AccountDaoImpl.class);
     @Autowired

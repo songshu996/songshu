@@ -1,6 +1,6 @@
-package com.jdbctemplate.dao;
+package com.springTransaction.dao;
 
-public interface AccountDao {
+public interface UserDao {
 
     /**
      * 转入资金

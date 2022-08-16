@@ -12,7 +12,7 @@
                            http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <!--开启包扫描-->
-    <context:component-scan base-package="com.jdbc, com.jdbctemplate"/>
+    <context:component-scan base-package="com.jdbc, com.springTransaction"/>
 
     <bean id="database" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="url" value="jdbc:mysql://sunpeishuo.mysql.rds.aliyuncs.com:3306/personInfo"/>
@@ -33,7 +33,7 @@
     </bean>
 
     <!--开启事务注解-->
-    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <!--配置通知-->
     <tx:advice id="transactionInterceptor">
@@ -47,7 +47,7 @@
     <!--配置切入点和切面-->
     <aop:config>
         <!--配置切入点-->
-        <aop:pointcut id="pt" expression="execution(* com.jdbctemplate.service.UserService.*(..))"/>
+        <aop:pointcut id="pt" expression="execution(* com.springTransaction.service.UserService.*(..))"/>
         <!--配置切面-->
         <aop:advisor advice-ref="transactionInterceptor" pointcut-ref="pt"/>
     </aop:config>

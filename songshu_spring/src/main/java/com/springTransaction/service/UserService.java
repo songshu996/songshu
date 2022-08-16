@@ -1,6 +1,6 @@
-package com.jdbctemplate.service;
+package com.springTransaction.service;
 
-import com.jdbctemplate.dao.UserDao;
+import com.springTransaction.dao.UserDao;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
-package com.jdbctemplate;
+package com.springTransaction;
 
-import com.jdbctemplate.service.UserService;
+import com.springTransaction.service.UserService;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
@@ -19,23 +19,16 @@ public class TestMoney {
     }
 
     @Test
-    public void test_PROPAGATION_REQUIRED(){
+    public void test_PROPAGATION_REQUIRED() {
 //        AccountService accountService = context.getBean("accountService", AccountService.class);
 //        accountService.transcationMoneyA();
-
-
     }
 
     @Test
-    public void test_PROPAGATION_REQUIRED2(){
+    public void test_PROPAGATION_REQUIRED2() {
         UserService userService = context2.getBean("userService", UserService.class);
         userService.transcationMoneyA();
-
-
     }
 
 
-    public static void main(String[] args) {
-
-    }
 }

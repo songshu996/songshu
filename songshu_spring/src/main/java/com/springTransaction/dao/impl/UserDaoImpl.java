@@ -1,6 +1,8 @@
 package com.springTransaction.dao.impl;
 
 import com.springTransaction.dao.UserDao;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -8,7 +10,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UserDaoImpl implements UserDao {
 
-    //private static Logger logger = Logger.getLogger(UserDaoImpl.class);
+    private static Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
+
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -16,13 +19,13 @@ public class UserDaoImpl implements UserDao {
     public void addMoney(String pid, Float money) {
         String sql = "update tb_account set money = money+? where pid = ?";
         int update = jdbcTemplate.update(sql, money, pid);
-       // logger.info("资金转入成功");
+        logger.info("资金转入成功");
     }
 
     @Override
     public void reduceMoney(String pid, Float money) {
         String sql = "update tb_account set money = money-? where pid = ?";
         int update = jdbcTemplate.update(sql, money, pid);
-        //logger.info("资金转出成功");
+        logger.info("资金转出成功");
     }
 }

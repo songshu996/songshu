@@ -21,15 +21,22 @@
         <property name="password" value="Lovegao1314"/>
     </bean>
 
+    <bean id="c3p0DataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://sunpeishuo.mysql.rds.aliyuncs.com:3306/personInfo"/>
+        <property name="user" value="sunpeishuo"/>
+        <property name="password" value="Lovegao1314"/>
+    </bean>
+
     <!--注入datasource-->
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-        <property name="dataSource" ref="database"/>
+        <property name="dataSource" ref="c3p0DataSource"/>
     </bean>
 
     <!--配置事务管理器-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!--注入数据源-->
-        <property name="dataSource" ref="database"/>
+        <property name="dataSource" ref="c3p0DataSource"/>
     </bean>
 
     <!--开启事务注解-->

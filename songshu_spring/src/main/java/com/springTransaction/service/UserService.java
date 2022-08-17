@@ -1,6 +1,8 @@
 package com.springTransaction.service;
 
 import com.springTransaction.dao.UserDao;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-    //private static Logger logger = Logger.getLogger(UserService.class);
+    private static Logger logger = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
     private UserDao userDao;
@@ -19,7 +21,7 @@ public class UserService {
         //mary 多100
        // int a = 100 / 0;
         userDao.addMoney("2002", 200.00f);
-        //logger.info("转账成功");
+        logger.info("转账成功");
 
     }
 

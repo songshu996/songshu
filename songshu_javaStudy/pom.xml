@@ -11,6 +11,8 @@
     <modules>
         <module>songshu_log4j</module>
         <module>songshu_mybatis</module>
+        <module>songshu_jdk</module>
+        <module>songshu_designpattern</module>
     </modules>
 
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/songshu_springmvc" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/songshu_javaStudy/pom.xml" />
+        <option value="$PROJECT_DIR$/songshu_leecode/pom.xml" />
+        <option value="$PROJECT_DIR$/songshu_springboot/pom.xml" />
+        <option value="$PROJECT_DIR$/songshu_spring/pom.xml" />
+        <option value="$PROJECT_DIR$/songshu_springcloud/pom.xml" />
+        <option value="$PROJECT_DIR$/songshu_studyAndWork/pom.xml" />
+        <option value="$PROJECT_DIR$/songshu_system/pom.xml" />
+        <option value="$PROJECT_DIR$/songshu_springmvc/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

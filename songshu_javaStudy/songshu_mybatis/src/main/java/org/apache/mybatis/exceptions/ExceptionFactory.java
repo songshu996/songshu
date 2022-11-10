@@ -15,7 +15,7 @@
  */
 package org.apache.mybatis.exceptions;
 
-import org.apache.mybatis.executor.ErrorContext;
+import org.apache.ibatis.executor.ErrorContext;
 
 /**
  * @author Clinton Begin

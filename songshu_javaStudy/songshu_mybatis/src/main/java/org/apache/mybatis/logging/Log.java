@@ -1,6 +1,5 @@
 package org.apache.mybatis.logging;
 
-
 public interface Log {
 
   boolean isDebugEnabled();

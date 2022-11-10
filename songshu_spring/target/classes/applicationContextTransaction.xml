@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 基于xml方式进行spring 声明式事务管理-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                          http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd
+                          http://www.springframework.org/schema/aop  http://www.springframework.org/schema/aop/spring-aop.xsd
+                           http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--开启包扫描-->
+    <context:component-scan base-package="com.jdbc, com.springTransaction"/>
+
+    <bean id="database" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url" value="jdbc:mysql://sunpeishuo.mysql.rds.aliyuncs.com:3306/personInfo"/>
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="username" value="sunpeishuo"/>
+        <property name="password" value="Lovegao1314"/>
+    </bean>
+
+    <bean id="c3p0DataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://sunpeishuo.mysql.rds.aliyuncs.com:3306/personInfo"/>
+        <property name="user" value="sunpeishuo"/>
+        <property name="password" value="Lovegao1314"/>
+    </bean>
+
+    <!--注入datasource-->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="c3p0DataSource"/>
+    </bean>
+
+    <!--配置事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--注入数据源-->
+        <property name="dataSource" ref="c3p0DataSource"/>
+    </bean>
+
+    <!--开启事务注解-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!--配置通知-->
+    <tx:advice id="transactionInterceptor">
+        <!--配置事务参数-->
+        <tx:attributes>
+            <!--指定在哪种规则的方法上添加事务-->
+            <tx:method name="transcationMoneyA" propagation="REQUIRED" isolation="REPEATABLE_READ" rollback-for="{ArithmeticException.class}"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!--配置切入点和切面-->
+    <aop:config>
+        <!--配置切入点-->
+        <aop:pointcut id="pt" expression="execution(* com.springTransaction.service.UserService.*(..))"/>
+        <!--配置切面-->
+        <aop:advisor advice-ref="transactionInterceptor" pointcut-ref="pt"/>
+    </aop:config>
+</beans>

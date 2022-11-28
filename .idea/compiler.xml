@@ -6,7 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="songshu_mybatis" />
         <module name="songshu_pay" />
         <module name="songshu_message" />
         <module name="songshu_leecode" />
@@ -16,7 +15,6 @@
         <module name="songshu_jdk" />
         <module name="songshu_log4j2.x" />
         <module name="songshu_springmvc" />
-        <module name="songshu_studyAndWork" />
         <module name="songshu_designpattern" />
         <module name="songshu_springcloud" />
         <module name="songshu_springboot" />
@@ -24,5 +22,9 @@
         <module name="songshu_file" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="songshu_mybatis" target="1.8" />
+      <module name="songshu_studyAndWork" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

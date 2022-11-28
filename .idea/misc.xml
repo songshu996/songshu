@@ -12,10 +12,14 @@
         <option value="$PROJECT_DIR$/songshu_springboot/pom.xml" />
         <option value="$PROJECT_DIR$/songshu_spring/pom.xml" />
         <option value="$PROJECT_DIR$/songshu_springcloud/pom.xml" />
-        <option value="$PROJECT_DIR$/songshu_studyAndWork/pom.xml" />
         <option value="$PROJECT_DIR$/songshu_system/pom.xml" />
         <option value="$PROJECT_DIR$/songshu_springmvc/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/songshu_javaStudy/songshu_mybatis/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />

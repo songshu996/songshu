@@ -1,4 +1,4 @@
-package com.songshu.common.util;
+package util;
 
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;

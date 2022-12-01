@@ -1,3 +1,4 @@
+/*
 package util;
 
 import com.aliyuncs.DefaultAcsClient;
@@ -18,9 +19,11 @@ public class SMSVerCodeUtils {
     public static final String accessKeyId = "";// accessKeyId,
     public static final String accessKeySecret = "";// accessKeySecret
 
-    /**
+    */
+/**
      * 发送短信
-     */
+     *//*
+
     public static void sendShortMessage(String templateCode,String phoneNumbers,String param) throws ClientException {
         // 设置超时时间-可自行调整
         System.setProperty("sun.net.client.defaultConnectTimeout", "10000");
@@ -63,3 +66,4 @@ public class SMSVerCodeUtils {
         sendShortMessage("","17560659601","2222");
     }
 }
+*/

@@ -30,7 +30,7 @@ public class HospitalSetController {
 
     @DeleteMapping("{id}")
     public Boolean de(){
-        return false;
+        return false; //dfsvsd
     }
 
 
